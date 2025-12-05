@@ -264,7 +264,14 @@ const weekPlan: DayPlan[] = [
 
 // Main Component
 export function WorkoutDietTracker() {
-  const [currentDayIndex, setCurrentDayIndex] = React.useState(0);
+  // Get the current day index based on today's day
+  const getCurrentDayIndex = () => {
+    const today = new Date().getDay(); // 0 = Sunday, 1 = Monday, etc.
+    // Map Sunday (0) to index 6, Monday (1) to index 0, etc.
+    return today === 0 ? 6 : today - 1;
+  };
+
+  const [currentDayIndex, setCurrentDayIndex] = React.useState(getCurrentDayIndex());
   const [goals, setGoals] = React.useState<Goal[]>([
     { id: "1", title: "Complete all meals on time", isCompleted: false },
     { id: "2", title: "Finish workout session", isCompleted: false },
@@ -307,17 +314,6 @@ export function WorkoutDietTracker() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20 p-4 md:p-8">
       <div className="max-w-6xl mx-auto space-y-6">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-center space-y-2"
-        >
-          <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-            Double Dragon Protocol
-          </h1>
-          <p className="text-muted-foreground">Your personalized workout & nutrition tracker</p>
-        </motion.div>
 
         {/* Day Navigation */}
         <motion.div
