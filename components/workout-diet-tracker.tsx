@@ -1,25 +1,20 @@
 "use client";
 
 import * as React from "react";
-import { motion, useSpring, useTransform, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   ChevronLeft,
   ChevronRight,
   Clock,
   Dumbbell,
   Utensils,
-  CheckCircle2,
-  Plus,
   Calendar,
-  Target,
   Flame
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Label } from "@/components/ui/label";
 
 // Types
 interface Meal {
@@ -51,12 +46,6 @@ interface DayPlan {
   workouts: WorkoutSession[];
   supplements: string[];
   completed: boolean;
-}
-
-interface Goal {
-  id: string;
-  title: string;
-  isCompleted: boolean;
 }
 
 // Sample Data
@@ -272,12 +261,6 @@ export function WorkoutDietTracker() {
   };
 
   const [currentDayIndex, setCurrentDayIndex] = React.useState(getCurrentDayIndex());
-  const [goals, setGoals] = React.useState<Goal[]>([
-    { id: "1", title: "Complete all meals on time", isCompleted: false },
-    { id: "2", title: "Finish workout session", isCompleted: false },
-    { id: "3", title: "Take all supplements", isCompleted: false },
-    { id: "4", title: "Drink 3L water", isCompleted: false },
-  ]);
   const [expandedMeals, setExpandedMeals] = React.useState(true);
   const [expandedWorkouts, setExpandedWorkouts] = React.useState(true);
 
@@ -290,26 +273,6 @@ export function WorkoutDietTracker() {
   const handleNextDay = () => {
     setCurrentDayIndex((prev) => (prev < weekPlan.length - 1 ? prev + 1 : 0));
   };
-
-  const handleToggleGoal = (goalId: string) => {
-    setGoals((prev) =>
-      prev.map((goal) =>
-        goal.id === goalId ? { ...goal, isCompleted: !goal.isCompleted } : goal
-      )
-    );
-  };
-
-  const handleAddGoal = () => {
-    const newGoal: Goal = {
-      id: `goal-${goals.length + 1}`,
-      title: `New Goal ${goals.length + 1}`,
-      isCompleted: false,
-    };
-    setGoals((prev) => [...prev, newGoal]);
-  };
-
-  const completedGoals = goals.filter((g) => g.isCompleted).length;
-  const progressPercentage = (completedGoals / goals.length) * 100;
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20 p-4 md:p-8">
@@ -334,7 +297,7 @@ export function WorkoutDietTracker() {
         </motion.div>
 
         {/* Overview Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -360,33 +323,6 @@ export function WorkoutDietTracker() {
                 <h3 className="font-semibold">Nutrition</h3>
               </div>
               <p className="text-sm text-muted-foreground">{currentDay.nutrition}</p>
-            </Card>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-          >
-            <Card className="p-4 space-y-2 hover:shadow-lg transition-shadow">
-              <div className="flex items-center gap-2">
-                <Target className="w-5 h-5 text-primary" />
-                <h3 className="font-semibold">Progress</h3>
-              </div>
-              <div className="space-y-2">
-                <div className="flex justify-between text-sm">
-                  <span className="text-muted-foreground">Goals</span>
-                  <span className="font-medium">{completedGoals}/{goals.length}</span>
-                </div>
-                <div className="h-2 bg-muted rounded-full overflow-hidden">
-                  <motion.div
-                    className="h-full bg-primary"
-                    initial={{ width: 0 }}
-                    animate={{ width: `${progressPercentage}%` }}
-                    transition={{ duration: 0.5 }}
-                  />
-                </div>
-              </div>
             </Card>
           </motion.div>
         </div>
@@ -540,57 +476,8 @@ export function WorkoutDietTracker() {
             )}
           </div>
 
-          {/* Right Column - Goals & Supplements */}
+          {/* Right Column - Supplements & Week Overview */}
           <div className="space-y-6">
-            {/* Daily Goals */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.6 }}
-            >
-              <Card className="p-6 space-y-4">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <div className="p-2 rounded-full bg-primary/10">
-                      <Target className="w-5 h-5 text-primary" />
-                    </div>
-                    <h3 className="text-xl font-semibold">Daily Goals</h3>
-                  </div>
-                  <Button variant="ghost" size="icon" onClick={handleAddGoal}>
-                    <Plus className="w-4 h-4" />
-                  </Button>
-                </div>
-
-                <div className="space-y-2">
-                  {goals.map((goal, index) => (
-                    <motion.button
-                      key={goal.id}
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: index * 0.05 }}
-                      onClick={() => handleToggleGoal(goal.id)}
-                      className={cn(
-                        "w-full flex items-center gap-3 p-3 rounded-xl",
-                        "bg-muted/50 hover:bg-muted",
-                        "border border-border/50 hover:border-border",
-                        "transition-all"
-                      )}
-                    >
-                      <Checkbox checked={goal.isCompleted} />
-                      <span
-                        className={cn(
-                          "text-sm text-left flex-1",
-                          goal.isCompleted && "line-through text-muted-foreground"
-                        )}
-                      >
-                        {goal.title}
-                      </span>
-                    </motion.button>
-                  ))}
-                </div>
-              </Card>
-            </motion.div>
-
             {/* Supplements */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
