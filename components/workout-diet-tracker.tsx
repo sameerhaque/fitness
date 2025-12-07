@@ -131,12 +131,12 @@ const weekPlan: DayPlan[] = [
   {
     day: "Thursday",
     date: "2025-01-23",
-    training: "AM Lift / PM Kickboxing (DOUBLE DRAGON)",
+    training: "AM Cardio Recovery / PM Kickboxing",
     nutrition: "SUPER HIGH CARB",
     meals: [
       { time: "Wake Up", activity: "Stim Stack", food: "Albuterol/Yohimbine/Caff + 3g Taurine", macros: "" },
-      { time: "7:00 AM", activity: "AM Pre-Lift", food: "1 Banana + 1 Scoop Whey", macros: "~200 cal" },
-      { time: "8:30 AM", activity: "Post-Lift (Refuel)", food: "1 Bagel + Jam + 1 Scoop Whey", macros: "~400 cal" },
+      { time: "7:00 AM", activity: "Pre-Cardio", food: "1 Banana + 1 Scoop Whey", macros: "~200 cal" },
+      { time: "8:30 AM", activity: "Post-Cardio (Refuel)", food: "1 Bagel + Jam + 1 Scoop Whey", macros: "~400 cal" },
       { time: "12:30 PM", activity: "Lunch", food: "200g Chicken + 350g Rice + Asparagus", macros: "~700 cal" },
       { time: "4:30 PM", activity: "PM Pre-Fight", food: "80g Oats + Honey + 1/2 Scoop Whey", macros: "~350 cal" },
       { time: "6:30 PM", activity: "KICKBOXING", food: "Sip 25g Cluster Dextrin + Electrolytes", macros: "~100 cal" },
@@ -146,15 +146,13 @@ const weekPlan: DayPlan[] = [
     workouts: [
       {
         time: "AM (7:30)",
-        type: "Athletic Primer",
+        type: "Zone 2 Cardio + Recovery",
         exercises: [
-          { name: "Push Press", sets: "3", reps: "6", notes: "Explosive drive, RPE 7-8" },
-          { name: "Chest-Supported Seal Row", sets: "3", reps: "10", notes: "Save lower back" },
-          { name: "Banded KB Swings", sets: "3", reps: "15", notes: "Fast hips" },
-          { name: "Explosive Cable Woodchops", sets: "3", reps: "10/side", notes: "" },
-          { name: "Face Pulls", sets: "3", reps: "15", notes: "Squeeze rear delts" },
-          { name: "Ab Wheel Rollouts", sets: "3", reps: "10", notes: "" },
-          { name: "Side Plank Hip Dips", sets: "3", reps: "12/side", notes: "" },
+          { name: "Zone 2 Cardio", sets: "1", reps: "45 min", notes: "Keep HR 120-140 bpm, save energy for PM" },
+          { name: "Dynamic Stretching", sets: "1", reps: "10 min", notes: "Full body mobility work" },
+          { name: "Hip Flexor Stretches", sets: "3", reps: "30 sec/side", notes: "Open hips for kicks" },
+          { name: "Shoulder Dislocations", sets: "2", reps: "15", notes: "Band work for shoulder mobility" },
+          { name: "Foam Rolling", sets: "1", reps: "5 min", notes: "Focus on legs and back" },
         ]
       },
       {
@@ -200,7 +198,7 @@ const weekPlan: DayPlan[] = [
   {
     day: "Saturday",
     date: "2025-01-25",
-    training: "Heavy Hypertrophy (Legs)",
+    training: "Heavy Intensity (Lower Volume)",
     nutrition: "High Carb / Potassium Load",
     meals: [
       { time: "Wake Up", activity: "No Stims", food: "Coffee Only + 4g Taurine", macros: "" },
@@ -215,17 +213,17 @@ const weekPlan: DayPlan[] = [
     workouts: [
       {
         time: "Afternoon",
-        type: "Heavy Hypertrophy",
+        type: "Max Intensity - Low Volume",
         exercises: [
-          { name: "Barbell Squats", sets: "4", reps: "6-8", notes: "Heavy - Wear belt. If back pumps, swap to Leg Press" },
-          { name: "Incline DB Press", sets: "4", reps: "8-10", notes: "Upper Chest" },
-          { name: "Lying Leg Curls", sets: "4", reps: "12-15", notes: "Hamstrings" },
-          { name: "Gorilla Rows", sets: "3", reps: "12-16 total", notes: "" },
-          { name: "DB Lateral Raises", sets: "4", reps: "15-20", notes: "Side Delts" },
-          { name: "Arm Superset (Bi/Tri)", sets: "3", reps: "Failure", notes: "" },
-          { name: "Weighted Cable Rope Crunches", sets: "4", reps: "15", notes: "Heavy" },
-          { name: "Lying Leg Flutters", sets: "3", reps: "45 sec", notes: "" },
-          { name: "Neck Side Lateral Isometrics", sets: "2", reps: "15 sec/side", notes: "" },
+          { name: "Barbell Squats", sets: "2", reps: "6-8", notes: "TO FAILURE - Wear belt. Max tension, not volume" },
+          { name: "Incline DB Press", sets: "2", reps: "8-10", notes: "TO FAILURE - Focus on mechanical tension" },
+          { name: "Lying Leg Curls", sets: "2", reps: "12-15", notes: "TO FAILURE - Slow negatives" },
+          { name: "Gorilla Rows", sets: "2", reps: "12-16 total", notes: "TO FAILURE - Maximum intensity" },
+          { name: "DB Lateral Raises", sets: "2", reps: "15-20", notes: "TO FAILURE - Constant tension" },
+          { name: "Arm Superset (Bi/Tri)", sets: "2", reps: "Failure", notes: "Drop sets if needed" },
+          { name: "Weighted Cable Rope Crunches", sets: "2", reps: "15", notes: "Heavy, controlled" },
+          { name: "Lying Leg Flutters", sets: "2", reps: "45 sec", notes: "Core stability" },
+          { name: "Neck Side Lateral Isometrics", sets: "2", reps: "15 sec/side", notes: "Light work only" },
         ]
       }
     ],
@@ -277,6 +275,17 @@ export function WorkoutDietTracker() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20 p-4 md:p-8">
       <div className="max-w-6xl mx-auto space-y-6">
+        {/* Header with optional theme toggle */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-center space-y-2"
+        >
+          <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+            Double Dragon Protocol
+          </h1>
+          <p className="text-muted-foreground">Your personalized workout & nutrition tracker</p>
+        </motion.div>
 
         {/* Day Navigation */}
         <motion.div
