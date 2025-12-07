@@ -275,18 +275,6 @@ export function WorkoutDietTracker() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20 p-4 md:p-8">
       <div className="max-w-6xl mx-auto space-y-6">
-        {/* Header with optional theme toggle */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-center space-y-2"
-        >
-          <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-            Double Dragon Protocol
-          </h1>
-          <p className="text-muted-foreground">Your personalized workout & nutrition tracker</p>
-        </motion.div>
-
         {/* Day Navigation */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
