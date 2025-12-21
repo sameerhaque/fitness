@@ -51,24 +51,24 @@ interface DayPlan {
 // Sample Data
 const weekPlan: DayPlan[] = [
   {
-    day: "Monday",
+    day: "MONDAY",
     date: "2025-01-20",
-    training: "AM Cardio / PM Kickboxing",
+    training: "Kickboxing + Cardio | NO Albuterol",
     nutrition: "High Carb / Hydration",
     meals: [
-      { time: "Wake Up", activity: "Fat Loss Stack", food: "Albuterol/Yohimbine + Taurine", macros: "" },
+      { time: "Wake Up", activity: "Fat Burner OFF", food: "Caffeine fat burner", macros: "" },
       { time: "AM Cardio", activity: "Zone 2", food: "Sip EAAs", macros: "" },
       { time: "Post-Cardio", activity: "Brain Fuel", food: "80g Oats + Whey + MCT Oil", macros: "~400 cal" },
       { time: "Lunch", activity: "Performance", food: "200g Chicken + 250g Rice + Beets", macros: "~600 cal" },
-      { time: "Pre-Workout", activity: "Fuel", food: "1 Banana + 3 Rice Cakes", macros: "~200 cal" },
+      { time: "Pre-Workout", activity: "Fuel", food: "3-4 Rice Cakes + Honey", macros: "~200 cal" },
       { time: "Dinner", activity: "Digestion", food: "200g White Fish + 250g Potatoes + Kimchi", macros: "~500 cal" },
       { time: "Night", activity: "Sleep Anchor", food: "Almond Butter + Magnesium", macros: "" },
     ],
     workouts: [
       {
         time: "AM",
-        type: "Zone 2 Cardio",
-        exercises: [{ name: "Steady State Cardio", sets: "1", reps: "60 min", notes: "Keep HR in Zone 2" }]
+        type: "Zone 2 Run (Easy)",
+        exercises: [{ name: "Easy Run", sets: "1", reps: "45-60 min", notes: "No hills, just movement. Keep it easy" }]
       },
       {
         time: "PM",
@@ -76,11 +76,11 @@ const weekPlan: DayPlan[] = [
         exercises: [{ name: "Kickboxing Training", sets: "", reps: "60-90 min", notes: "Focus on technique" }]
       }
     ],
-    supplements: ["Beets (Lunch)", "Taurine", "EAAs", "Magnesium"],
+    supplements: ["Beets (Lunch)", "Taurine", "EAAs", "Magnesium", "NO Albuterol (prevent cramps)"],
     completed: false
   },
   {
-    day: "Tuesday",
+    day: "TUESDAY",
     date: "2025-01-21",
     training: "Power & Rotation (Push)",
     nutrition: "Moderate Carb / High Protein",
@@ -89,10 +89,17 @@ const weekPlan: DayPlan[] = [
       { time: "Breakfast", activity: "Fuel", food: "100g Oats + Whey + Collagen", macros: "~450 cal" },
       { time: "Lunch", activity: "Performance", food: "200g Chicken + 200g Rice + Veggies", macros: "~550 cal" },
       { time: "Pre-Workout", activity: "Energy", food: "1 Banana + Rice Cakes", macros: "~150 cal" },
-      { time: "Dinner", activity: "Recovery", food: "200g Beef + 200g Rice + Spinach", macros: "~600 cal" },
+      { time: "Dinner", activity: "Recovery", food: "170g-200g Top Sirloin + 200g Rice + Spinach", macros: "~600 cal" },
       { time: "Night", activity: "Sleep", food: "Almond Butter + Magnesium", macros: "" },
     ],
     workouts: [
+      {
+        time: "AM",
+        type: "Zone 2 Run (Moderate)",
+        exercises: [
+          { name: "Moderate Run", sets: "1", reps: "45-60 min", notes: "Zone 2 pace, moderate effort" }
+        ]
+      },
       {
         time: "Evening",
         type: "Power & Rotation",
@@ -112,47 +119,55 @@ const weekPlan: DayPlan[] = [
     completed: false
   },
   {
-    day: "Wednesday",
+    day: "WEDNESDAY",
     date: "2025-01-22",
     training: "FULL REST",
     nutrition: "Low Carb / High Fat",
     meals: [
-      { time: "Wake Up", activity: "System Flush", food: "Lemon Water + Collagen", macros: "" },
+      { time: "Wake Up", activity: "System Flush", food: "Lemon Water + Collagen + Albuterol ON", macros: "" },
       { time: "Breakfast", activity: "Meat & Nut", food: "170g Steak/Salmon + Avocado + Berries", macros: "~500 cal" },
       { time: "Lunch", activity: "Maintenance", food: "200g Chicken + 150g Rice + Veggies", macros: "~450 cal" },
       { time: "Snack", activity: "Protein", food: "1 Scoop Whey/Beef Protein", macros: "~120 cal" },
       { time: "Dinner", activity: "Health", food: "200g White Fish + Large Salad + Olive Oil", macros: "~400 cal" },
       { time: "Night", activity: "Sleep", food: "Almond Butter + Magnesium", macros: "" },
     ],
-    workouts: [],
+    workouts: [
+      {
+        time: "Throughout Day",
+        type: "10k Steps Walking",
+        exercises: [
+          { name: "Walking", sets: "1", reps: "10,000 steps", notes: "No running, just walking throughout the day" }
+        ]
+      }
+    ],
     supplements: ["Collagen", "Magnesium (High Dose)", "Dandelion Tea"],
     completed: false
   },
   {
-    day: "Thursday",
+    day: "THURSDAY",
     date: "2025-01-23",
-    training: "AM Cardio Recovery / PM Kickboxing",
-    nutrition: "SUPER HIGH CARB",
+    training: "AM Cardio (NO RUN) / PM Kickboxing | Fat Burner OFF",
+    nutrition: "SUPER HIGH CARB / Nitrate Load",
     meals: [
-      { time: "Wake Up", activity: "Stim Stack", food: "Albuterol/Yohimbine/Caff + 3g Taurine", macros: "" },
-      { time: "7:00 AM", activity: "Pre-Cardio", food: "1 Banana + 1 Scoop Whey", macros: "~200 cal" },
-      { time: "8:30 AM", activity: "Post-Cardio (Refuel)", food: "1 Bagel + Jam + 1 Scoop Whey", macros: "~400 cal" },
-      { time: "12:30 PM", activity: "Lunch", food: "200g Chicken + 350g Rice + Asparagus", macros: "~700 cal" },
-      { time: "4:30 PM", activity: "PM Pre-Fight", food: "80g Oats + Honey + 1/2 Scoop Whey", macros: "~350 cal" },
-      { time: "6:30 PM", activity: "KICKBOXING", food: "Sip 25g Cluster Dextrin + Electrolytes", macros: "~100 cal" },
-      { time: "8:30 PM", activity: "Dinner", food: "200g White Fish + 300g Potatoes", macros: "~550 cal" },
-      { time: "10:00 PM", activity: "Sleep Anchor", food: "1 Tbsp Almond Butter + Magnesium", macros: "" },
+      { time: "Wake Up", activity: "Fat Burner OFF", food: "Caffeine only + 3g Taurine", macros: "" },
+      { time: "Pre-Cardio", activity: "Tendon Stack", food: "10-15g Collagen + 500mg Vit C + Pink Salt", macros: "" },
+      { time: "Post-Cardio", activity: "Glycogen Restore", food: "1 Scoop Egg White Protein + 1 MadeGood Bar + 1/2 Banana", macros: "~250 cal" },
+      { time: "Breakfast", activity: "Fuel", food: "1 Cup Oats + 1 Scoop Beef Protein + 1 Kiwi + MCT Oil", macros: "~450 cal" },
+      { time: "Lunch", activity: "Nitrate Load", food: "200g Chicken + 200g Rice + 200g Beets + 60g Hummus", macros: "~700 cal" },
+      { time: "5:30 PM", activity: "Anti-Cramp", food: "Electrolytes + 3g Taurine + Potassium + 3-4 Rice Cakes + Honey", macros: "~200 cal" },
+      { time: "6:30 PM", activity: "KICKBOXING", food: "Sip water/electrolytes", macros: "" },
+      { time: "Post-Fight", activity: "Recovery", food: "200g White Fish + 400g Sweet Potato (salted)", macros: "~600 cal" },
+      { time: "Bedtime", activity: "Sleep Stack", food: "20g Walnuts + Magnesium 500mg + Vit C 1000mg", macros: "~130 cal" },
     ],
     workouts: [
       {
-        time: "AM (7:30)",
-        type: "Zone 2 Cardio + Recovery",
+        time: "AM",
+        type: "Zone 2 Cardio + Mobility (NO RUN - Save Shins)",
         exercises: [
-          { name: "Zone 2 Cardio", sets: "1", reps: "45 min", notes: "Keep HR 120-140 bpm, save energy for PM" },
           { name: "Dynamic Stretching", sets: "1", reps: "10 min", notes: "Full body mobility work" },
+          { name: "Zone 2 Cardio", sets: "1", reps: "45 min", notes: "NO RUNNING - bike/elliptical only. HR 120-140 bpm" },
           { name: "Hip Flexor Stretches", sets: "3", reps: "30 sec/side", notes: "Open hips for kicks" },
-          { name: "Shoulder Dislocations", sets: "2", reps: "15", notes: "Band work for shoulder mobility" },
-          { name: "Foam Rolling", sets: "1", reps: "5 min", notes: "Focus on legs and back" },
+          { name: "Foam Rolling", sets: "1", reps: "5 min", notes: "Focus on shins, calves, IT band" },
         ]
       },
       {
@@ -161,13 +176,13 @@ const weekPlan: DayPlan[] = [
         exercises: [{ name: "Kickboxing Training", sets: "", reps: "60-90 min", notes: "Sip intra-carbs" }]
       }
     ],
-    supplements: ["Taurine (Mandatory)", "Intra-Carbs (Cluster Dextrin)", "Electrolytes"],
+    supplements: ["Fat Burner OFF", "Collagen (Pre-cardio)", "Taurine 6g total", "Beets 200g", "Potassium", "Magnesium 500mg", "Vitamin C 1500mg total"],
     completed: false
   },
   {
-    day: "Friday",
+    day: "FRIDAY",
     date: "2025-01-24",
-    training: "Unilateral / Tendon Focus",
+    training: "Leg Prep + Cardio | Albuterol ON",
     nutrition: "Moderate Carb",
     meals: [
       { time: "Wake Up", activity: "Stim Stack", food: "Albuterol/Yohimbine + Taurine", macros: "" },
@@ -179,8 +194,15 @@ const weekPlan: DayPlan[] = [
     ],
     workouts: [
       {
+        time: "AM",
+        type: "Run (Hard Intensity)",
+        exercises: [
+          { name: "Hard Run", sets: "1", reps: "30-45 min", notes: "Hard intensity, push the pace" }
+        ]
+      },
+      {
         time: "Evening",
-        type: "Functional Unilateral",
+        type: "Functional Unilateral - Leg Prep",
         exercises: [
           { name: "Bulgarian Split Squats", sets: "3", reps: "8-10", notes: "Deep stretch, 3-sec negative" },
           { name: "Single-Arm Lat Pulldown", sets: "4", reps: "12-15", notes: "Stretch lats, 3-sec negative" },
@@ -196,7 +218,7 @@ const weekPlan: DayPlan[] = [
     completed: false
   },
   {
-    day: "Saturday",
+    day: "SATURDAY",
     date: "2025-01-25",
     training: "Heavy Intensity (Lower Volume)",
     nutrition: "High Carb / Potassium Load",
@@ -231,7 +253,7 @@ const weekPlan: DayPlan[] = [
     completed: false
   },
   {
-    day: "Sunday",
+    day: "SUNDAY",
     date: "2025-01-26",
     training: "FULL REST",
     nutrition: "Detox / Digestion",
