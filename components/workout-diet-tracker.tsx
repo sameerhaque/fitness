@@ -53,30 +53,24 @@ const weekPlan: DayPlan[] = [
   {
     day: "MONDAY",
     date: "2025-01-20",
-    training: "Kickboxing + Cardio | NO Albuterol",
+    training: "Zone 2 Cardio + Sauna",
     nutrition: "High Carb / Hydration",
     meals: [
-      { time: "Wake Up", activity: "Fat Burner OFF", food: "Caffeine fat burner", macros: "" },
-      { time: "AM Cardio", activity: "Zone 2", food: "Sip EAAs", macros: "" },
-      { time: "Post-Cardio", activity: "Brain Fuel", food: "80g Oats + Whey + MCT Oil", macros: "~400 cal" },
-      { time: "Lunch", activity: "Performance", food: "200g Chicken + 250g Rice + Beets", macros: "~600 cal" },
-      { time: "Pre-Workout", activity: "Fuel", food: "3-4 Rice Cakes + Honey", macros: "~200 cal" },
-      { time: "Dinner", activity: "Digestion", food: "200g White Fish + 250g Potatoes + Kimchi", macros: "~500 cal" },
-      { time: "Night", activity: "Sleep Anchor", food: "Almond Butter + Magnesium", macros: "" },
+      { time: "Pre-Cardio", activity: "pre-cardio", food: "Powder fat burner", macros: "0 cal" },
+      { time: "Post-Cardio", activity: "Brain Fuel", food: "80g Oats + Egg or Beef Protein Powder + Berries", macros: "~400 cal" },
+      { time: "Lunch", activity: "Performance", food: "200g Chicken + 180g Rice + Veg", macros: "~500 cal" },
+      { time: "Afternoon", activity: "Fuel", food: "Beef Protein Shake + 2 Rice Cakes + Berries", macros: "~200 cal" },
+      { time: "Dinner", activity: "Digestion", food: "200g White Fish + 250g Potatoes + Vegetables", macros: "~500 cal" },
+      { time: "Night", activity: "Sleep Anchor", food: "Almond Butter + Magnesium", macros: "~150 cal" },
     ],
     workouts: [
       {
         time: "AM",
-        type: "Zone 2 Run (Easy)",
-        exercises: [{ name: "Easy Run", sets: "1", reps: "45-60 min", notes: "No hills, just movement. Keep it easy" }]
-      },
-      {
-        time: "PM",
-        type: "Kickboxing Class",
-        exercises: [{ name: "Kickboxing Training", sets: "", reps: "60-90 min", notes: "Focus on technique" }]
+        type: "Zone 2 Run (Stationary Bike) + Sauna",
+        exercises: [{ name: "Stationary Bike", sets: "1", reps: "40-45 mins", notes: "Keep it easy" }]
       }
     ],
-    supplements: ["Beets (Lunch)", "Taurine", "EAAs", "Magnesium", "NO Albuterol (prevent cramps)"],
+    supplements: ["Fat Burner (Pre-Cardio)", "Collagen (Post-Cardio)", "Taurine", "Magnesium"],
     completed: false
   },
   {
@@ -84,35 +78,27 @@ const weekPlan: DayPlan[] = [
     date: "2025-01-21",
     training: "Power & Rotation (Push)",
     nutrition: "Moderate Carb / High Protein",
-    meals: [
-      { time: "Wake Up", activity: "Stim Stack", food: "Albuterol/Yohimbine/Caff + 3g Taurine", macros: "" },
-      { time: "Breakfast", activity: "Fuel", food: "100g Oats + Whey + Collagen", macros: "~450 cal" },
-      { time: "Lunch", activity: "Performance", food: "200g Chicken + 200g Rice + Veggies", macros: "~550 cal" },
-      { time: "Pre-Workout", activity: "Energy", food: "1 Banana + Rice Cakes", macros: "~150 cal" },
-      { time: "Dinner", activity: "Recovery", food: "170g-200g Top Sirloin + 200g Rice + Spinach", macros: "~600 cal" },
+    meals: [ 
+      { time: "Pre-Cardio", activity: "pre-cardio", food: "Powder fat burner", macros: "0 cal" },
+      { time: "Post-Cardio", activity: "Brain Fuel", food: "80g Oats + Egg or Beef Protein Powder + Berries", macros: "~400 cal" },
+      { time: "Lunch", activity: "Performance", food: "200g Chicken + 200g Rice + Veg", macros: "~550 cal" },
+      { time: "Pre-Workout Meal", activity: "Performance", food: "40g Beef Protein, 2-3 Rice Cakes + honey", macros: "~250 cal" },
+      { time: "Post-Workout Meal", activity: "Performance", food: "45g Beef Protein + 2 rice bars", macros: "~250 cal" },
+      { time: "Dinner", activity: "Recovery", food: "200g Lean Beef or White Fish + 250–300g Potatoes or Rice + Veg", macros: "~550 cal" },
       { time: "Night", activity: "Sleep", food: "Almond Butter + Magnesium", macros: "" },
     ],
     workouts: [
       {
         time: "AM",
-        type: "Zone 2 Run (Moderate)",
+        type: "Zone 2 Run (Stationary Bike)",
         exercises: [
-          { name: "Moderate Run", sets: "1", reps: "45-60 min", notes: "Zone 2 pace, moderate effort" }
+          { name: "Stationary Bike", sets: "1", reps: "40 min", notes: "Zone 2 pace" }
         ]
-      },
+      }, 
       {
-        time: "Evening",
+        time: "PM",
         type: "Power & Rotation",
-        exercises: [
-          { name: "Landmine Power Rotation w/ Bands", sets: "4", reps: "6-8", notes: "Speed focus" },
-          { name: "Weighted Dips", sets: "4", reps: "8-10", notes: "Stop at parallel" },
-          { name: "Kneeling Single-Arm DB Press", sets: "3", reps: "10-12", notes: "" },
-          { name: "Landmine Flys", sets: "3", reps: "12-15", notes: "" },
-          { name: "Pallof Press", sets: "3", reps: "10 sec hold/side", notes: "" },
-          { name: "Hanging Knee Raises", sets: "3", reps: "15", notes: "Decompress spine" },
-          { name: "Weighted Russian Twists", sets: "3", reps: "20 total", notes: "" },
-          { name: "Neck Flexion/Extension", sets: "2", reps: "15", notes: "Light weight" },
-        ]
+        exercises: [{ name: "Power & Rotation", sets: "", reps: "60-90 min", notes: "" }]
       }
     ],
     supplements: ["Collagen (AM)", "Taurine", "Magnesium"],
@@ -121,22 +107,22 @@ const weekPlan: DayPlan[] = [
   {
     day: "WEDNESDAY",
     date: "2025-01-22",
-    training: "FULL REST",
-    nutrition: "Low Carb / High Fat",
+    training: "No Zone 2 / Flow and speed",
+    nutrition: "support recovery, joint health, and CNS freshness",
     meals: [
-      { time: "Wake Up", activity: "System Flush", food: "Lemon Water + Collagen + Albuterol ON", macros: "" },
-      { time: "Breakfast", activity: "Meat & Nut", food: "170g Steak/Salmon + Avocado + Berries", macros: "~500 cal" },
-      { time: "Lunch", activity: "Maintenance", food: "200g Chicken + 150g Rice + Veggies", macros: "~450 cal" },
-      { time: "Snack", activity: "Protein", food: "1 Scoop Whey/Beef Protein", macros: "~120 cal" },
-      { time: "Dinner", activity: "Health", food: "200g White Fish + Large Salad + Olive Oil", macros: "~400 cal" },
+      { time: "Wake Up", activity: "System Flush", food: "Lemon Water + Collagen"},
+      { time: "Breakfast", activity: "Nervous System Support", food: "60-70g Oats + Egg Protein + Berries", macros: "~350 cal" },
+      { time: "Lunch", activity: "Performance / Recovery", food: "200g Lean Beef or Chicken + 150g Rice + Veggies", macros: "~450 cal" },
+      { time: "Pre-Workout", activity: "Energy", food: "2 Rice Cakes + honey", macros: "~120 cal" },
+      { time: "Dinner", activity: "Health", food: "200g White Fish or Lean Beef + 200-220g Potatoes + Vegetables", macros: "~450 cal" },
       { time: "Night", activity: "Sleep", food: "Almond Butter + Magnesium", macros: "" },
     ],
     workouts: [
       {
-        time: "Throughout Day",
-        type: "10k Steps Walking",
+        time: "PM",
+        type: "Flow and speed",
         exercises: [
-          { name: "Walking", sets: "1", reps: "10,000 steps", notes: "No running, just walking throughout the day" }
+          { name: "Flow and speed", sets: "", reps: "", notes: "" }
         ]
       }
     ],
@@ -146,58 +132,51 @@ const weekPlan: DayPlan[] = [
   {
     day: "THURSDAY",
     date: "2025-01-23",
-    training: "AM Cardio (NO RUN) / PM Kickboxing | Fat Burner OFF",
-    nutrition: "SUPER HIGH CARB / Nitrate Load",
+    training: "AM Cardio only",
+    nutrition: "fat loss + leg freshness",
     meals: [
-      { time: "Wake Up", activity: "Fat Burner OFF", food: "Caffeine only + 3g Taurine", macros: "" },
-      { time: "Pre-Cardio", activity: "Tendon Stack", food: "10-15g Collagen + 500mg Vit C + Pink Salt", macros: "" },
-      { time: "Post-Cardio", activity: "Glycogen Restore", food: "1 Scoop Egg White Protein + 1 MadeGood Bar + 1/2 Banana", macros: "~250 cal" },
-      { time: "Breakfast", activity: "Fuel", food: "1 Cup Oats + 1 Scoop Beef Protein + 1 Kiwi + MCT Oil", macros: "~450 cal" },
-      { time: "Lunch", activity: "Nitrate Load", food: "200g Chicken + 200g Rice + 200g Beets + 60g Hummus", macros: "~700 cal" },
-      { time: "5:30 PM", activity: "Anti-Cramp", food: "Electrolytes + 3g Taurine + Potassium + 3-4 Rice Cakes + Honey", macros: "~200 cal" },
-      { time: "6:30 PM", activity: "KICKBOXING", food: "Sip water/electrolytes", macros: "" },
-      { time: "Post-Fight", activity: "Recovery", food: "200g White Fish + 400g Sweet Potato (salted)", macros: "~600 cal" },
-      { time: "Bedtime", activity: "Sleep Stack", food: "20g Walnuts + Magnesium 500mg + Vit C 1000mg", macros: "~130 cal" },
-    ],
-    workouts: [
-      {
-        time: "AM",
-        type: "Zone 2 Cardio + Mobility (NO RUN - Save Shins)",
-        exercises: [
-          { name: "Dynamic Stretching", sets: "1", reps: "10 min", notes: "Full body mobility work" },
-          { name: "Zone 2 Cardio", sets: "1", reps: "45 min", notes: "NO RUNNING - bike/elliptical only. HR 120-140 bpm" },
-          { name: "Hip Flexor Stretches", sets: "3", reps: "30 sec/side", notes: "Open hips for kicks" },
-          { name: "Foam Rolling", sets: "1", reps: "5 min", notes: "Focus on shins, calves, IT band" },
-        ]
-      },
-      {
-        time: "PM (6:30)",
-        type: "Kickboxing Class",
-        exercises: [{ name: "Kickboxing Training", sets: "", reps: "60-90 min", notes: "Sip intra-carbs" }]
-      }
-    ],
-    supplements: ["Fat Burner OFF", "Collagen (Pre-cardio)", "Taurine 6g total", "Beets 200g", "Potassium", "Magnesium 500mg", "Vitamin C 1500mg total"],
-    completed: false
-  },
-  {
-    day: "FRIDAY",
-    date: "2025-01-24",
-    training: "Leg Prep + Cardio | Albuterol ON",
-    nutrition: "Moderate Carb",
-    meals: [
-      { time: "Wake Up", activity: "Stim Stack", food: "Albuterol/Yohimbine + Taurine", macros: "" },
-      { time: "Breakfast", activity: "Fuel", food: "80g Oats + Whey + Berries", macros: "~400 cal" },
-      { time: "Lunch", activity: "Performance", food: "200g Chicken + 200g Rice + Veggies", macros: "~550 cal" },
-      { time: "Pre-Workout", activity: "Energy", food: "1 Banana + Rice Cakes", macros: "~150 cal" },
-      { time: "Dinner", activity: "Recovery", food: "200g White Fish + 250g Potatoes", macros: "~500 cal" },
+      { time: "Pre-Cardio", activity: "pre-cardio", food: "Powder fat burner", macros: "0 cal" },
+      { time: "Breakfast", activity: "Fuel", food: "70-80g Oats + Protein Powder + Berries", macros: "~420 cal" },
+      { time: "Lunch", activity: "Recovery / Satiety", food: "200g Chicken + 160g Rice + 200g Beets", macros: "~520 cal" },
+      { time: "Snack", activity: "Protein / Digestion-Friendly", food: "Protein Shake (30-40g protein) + 1-2 Rice Cakes or Berries", macros: "~220 cal" },
+      { time: "Dinner", activity: "Recovery / Anti-Inflammatory", food: "200g White Fish + 220-250g Potatoes + Vegetables", macros: "~450 cal" },
       { time: "Night", activity: "Sleep", food: "Almond Butter + Magnesium", macros: "" },
     ],
     workouts: [
       {
         time: "AM",
-        type: "Run (Hard Intensity)",
+        type: "Zone 2 Cardio (Incline Treadmill Walk)",
         exercises: [
-          { name: "Hard Run", sets: "1", reps: "30-45 min", notes: "Hard intensity, push the pace" }
+          { name: "Dynamic Stretching", sets: "1", reps: "10 min", notes: "Full body mobility work" },
+          { name: "Zone 2 Cardio", sets: "1", reps: "45 min", notes: "Incline Treadmill Walk" },
+          { name: "Hip Flexor Stretches", sets: "3", reps: "30 sec/side", notes: "Open hips for kicks" },
+          { name: "Foam Rolling", sets: "1", reps: "5 min", notes: "Focus on shins, calves, IT band" },
+        ]
+      }
+    ],
+    supplements: ["Collagen (Pre-cardio)", "Taurine 6g total", "Beets 200g", "Potassium", "Magnesium 500mg",],
+    completed: false
+  },
+  {
+    day: "FRIDAY",
+    date: "2025-01-24",
+    training: "Fasted AM Zone 2 | PM Unilateral Lift",
+    nutrition: "Moderate Carb",
+    meals: [
+      { time: "Pre-Cardio", activity: "pre-cardio", food: "Powder fat burner", macros: "0 cal" },
+      { time: "Breakfast", activity: "Fuel", food: "80g Oats + Egg or Beef Protein Powder + Berries", macros: "~400 cal" },
+      { time: "Lunch", activity: "Performance", food: "200g Chicken + 200g Rice + Veggies", macros: "~550 cal" },
+      { time: "Pre-Workout", activity: "Energy", food: "30-40g Beef Protein + 2 Rice Cakes + honey", macros: "~150 cal" },
+      { time: "Post-Workout", activity: "Recovery", food: "30-40g Beef Protein + 2 crispy square", macros: "~400 cal" },
+      { time: "Dinner", activity: "Recovery", food: "200g Lean Beef or White Fish + 250-300g Potatoes or Rice + Veg", macros: "~500 cal" },
+      { time: "Night", activity: "Sleep", food: "Almond Butter + Magnesium", macros: "" },
+    ],
+    workouts: [
+      {
+        time: "AM",
+        type: "Stationary Bike",
+        exercises: [
+          { name: "Stationary Bike", sets: "1", reps: "30-45 min", notes: "Harder intensity, 130 bpm" }
         ]
       },
       {
@@ -205,12 +184,6 @@ const weekPlan: DayPlan[] = [
         type: "Functional Unilateral - Leg Prep",
         exercises: [
           { name: "Bulgarian Split Squats", sets: "3", reps: "8-10", notes: "Deep stretch, 3-sec negative" },
-          { name: "Single-Arm Lat Pulldown", sets: "4", reps: "12-15", notes: "Stretch lats, 3-sec negative" },
-          { name: "Standing Single-Arm Cable Press", sets: "3", reps: "12-15", notes: "Anti-rotation" },
-          { name: "Single-Leg RDL", sets: "3", reps: "10", notes: "Hamstring/Ankle stability" },
-          { name: "Suitcase Carries", sets: "3", reps: "40 steps", notes: "Heavy grip" },
-          { name: "Reverse Crunches", sets: "3", reps: "15", notes: "" },
-          { name: "Copenhagen Planks", sets: "3", reps: "20-30 sec", notes: "Groin health" },
         ]
       }
     ],
@@ -220,48 +193,45 @@ const weekPlan: DayPlan[] = [
   {
     day: "SATURDAY",
     date: "2025-01-25",
-    training: "Heavy Legs (Hypertrophy) | Albuterol ON",
-    nutrition: "High Carb / Nitrate Load",
+    training: "Heavy Legs (Hypertrophy)",
+    nutrition: "PM Heavy Hypertrophy Lift",
     meals: [
       { time: "Wake Up", activity: "Peptides", food: "Wait 30 mins", macros: "" },
-      { time: "Breakfast", activity: "Foundation", food: "1 Cup Oats + 250ml Egg Whites (cooked) + 1 Kiwi + MCT Oil", macros: "~500 cal" },
-      { time: "AM", activity: "Fat Burner", food: "Albuterol (Dose 1) + Caffeine", macros: "" },
-      { time: "Lunch", activity: "Nitrate & Carb Load", food: "200g Chicken + 200g Rice + 200g Beets + 60g Hummus", macros: "~700 cal" },
-      { time: "Pre-Workout", activity: "Tendon Insurance", food: "10-15g Collagen + 500mg Vit C + 3-4 Rice Cakes + Honey", macros: "~200 cal" },
-      { time: "Post-Workout", activity: "Anabolic Window", food: "1 Scoop Egg White Protein + 1 MadeGood Bar + 1 Large Banana", macros: "~350 cal" },
-      { time: "Dinner", activity: "Mineral Restore", food: "170-200g Top Sirloin (no oil) + 400g Potatoes (salted) + Spinach", macros: "~700 cal" },
+      { time: "Breakfast", activity: "Foundation", food: "90g oats + Beef Protein + Berries", macros: "~500 cal" },
+      { time: "Lunch", activity: "Performance Anchor", food: "200g Lean Beef or Chicken + 250-300g Cooked Rice + Veg", macros: "~700 cal" },
+      { time: "Pre-Workout", activity: "Energy", food: "30-40g Beef Protein + 2 Rice Cakes + honey", macros: "~150 cal" },      
+      { time: "Post-Workout", activity: "Recovery", food: "30-40g Beef Protein + 2 crispy square", macros: "~400 cal" },
+      { time: "Dinner", activity: "Mineral Restore", food: "200g White Fish or Lean Beef + 250-300g Potatoes or Rice + Spinach", macros: "~700 cal" },
       { time: "Bedtime", activity: "Sleep Stack", food: "20g Walnuts + Magnesium 500mg + Vit C 1000mg", macros: "~130 cal" },
     ],
     workouts: [
+      {        
+        time: "AM",
+        type: "Stationary Bike",
+        exercises: [{ name: "Stationary Bike", sets: "", reps: "", notes: "" }]
+      },
       {
         time: "Afternoon",
         type: "Heavy Legs (Hypertrophy)",
         exercises: [
-          { name: "Barbell Squats", sets: "4", reps: "6-8", notes: "Heavy, control eccentric. Wear belt" },
-          { name: "Romanian Deadlifts", sets: "3", reps: "8-10", notes: "Focus on hamstring stretch" },
-          { name: "Leg Press", sets: "3", reps: "12-15", notes: "High & wide foot placement" },
-          { name: "Walking Lunges", sets: "3", reps: "12 each leg", notes: "Continuous tension" },
-          { name: "Lying Leg Curls", sets: "3", reps: "12-15", notes: "Slow negatives, squeeze at top" },
-          { name: "Leg Extensions", sets: "3", reps: "15-20", notes: "Light weight, focus on quad burn" },
-          { name: "Calf Raises", sets: "3", reps: "15-20", notes: "Full ROM, pause at top" },
-          { name: "Abs Circuit", sets: "2", reps: "Various", notes: "Planks, leg raises, crunches" },
+          { name: "Front Squats", sets: "4", reps: "6-8", notes: "Heavy, control eccentric. Wear belt" },
         ]
       }
     ],
-    supplements: ["Albuterol ON (2 doses)", "Collagen (Pre-workout for knees)", "Beets 200g", "Vitamin C 1500mg total", "Magnesium 500mg", "Electrolytes"],
+    supplements: ["Magnesium 500mg", "Electrolytes"],
     completed: false
   },
   {
     day: "SUNDAY",
     date: "2025-01-26",
-    training: "FULL REST",
+    training: "FULL REST 8-10k casual walk only",
     nutrition: "Detox / Digestion",
     meals: [
       { time: "Wake Up", activity: "System Flush", food: "Lemon Water + Collagen", macros: "" },
-      { time: "Breakfast", activity: "Meat & Nut", food: "170g Steak/Salmon + Avocado + Berries", macros: "~500 cal" },
-      { time: "Lunch", activity: "Maintenance", food: "200g Chicken + 150g Rice + Veggies", macros: "~450 cal" },
-      { time: "Snack", activity: "Protein", food: "1 Scoop Whey/Beef Protein", macros: "~120 cal" },
-      { time: "Dinner", activity: "Health", food: "200g White Fish + Large Salad + Olive Oil", macros: "~400 cal" },
+      { time: "Breakfast", activity: "Calm Fuel", food: "60-70g Oats + Egg Protein Powder + Berries", macros: "~500 cal" },
+      { time: "Lunch", activity: "Recovery", food: "200g Lean Beef or Chicken + 150-170g Cooked Rice or Potatoes + Veggies", macros: "~450 cal" },
+      { time: "Snack", activity: "Protein", food: "1 Scoop Whey/Beef Protein + 1 Rice Cake", macros: "~120 cal" },
+      { time: "Dinner", activity: "Health", food: "200g White Fish + 200-220g Potatoes + Veg", macros: "~400 cal" },
       { time: "Night", activity: "Sleep", food: "Almond Butter + Magnesium", macros: "" },
     ],
     workouts: [],
