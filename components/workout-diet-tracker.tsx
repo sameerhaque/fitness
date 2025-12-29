@@ -39,7 +39,6 @@ interface WorkoutSession {
 
 interface DayPlan {
   day: string;
-  date: string;
   training: string;
   nutrition: string;
   meals: Meal[];
@@ -52,7 +51,6 @@ interface DayPlan {
 const weekPlan: DayPlan[] = [
   {
     day: "MONDAY",
-    date: "2025-01-20",
     training: "Zone 2 Cardio + Sauna",
     nutrition: "High Carb / Hydration",
     meals: [
@@ -75,7 +73,6 @@ const weekPlan: DayPlan[] = [
   },
   {
     day: "TUESDAY",
-    date: "2025-01-21",
     training: "Power & Rotation (Push)",
     nutrition: "Moderate Carb / High Protein",
     meals: [ 
@@ -106,7 +103,6 @@ const weekPlan: DayPlan[] = [
   },
   {
     day: "WEDNESDAY",
-    date: "2025-01-22",
     training: "No Zone 2 / Flow and speed",
     nutrition: "support recovery, joint health, and CNS freshness",
     meals: [
@@ -131,7 +127,6 @@ const weekPlan: DayPlan[] = [
   },
   {
     day: "THURSDAY",
-    date: "2025-01-23",
     training: "AM Cardio only",
     nutrition: "fat loss + leg freshness",
     meals: [
@@ -159,7 +154,6 @@ const weekPlan: DayPlan[] = [
   },
   {
     day: "FRIDAY",
-    date: "2025-01-24",
     training: "Fasted AM Zone 2 | PM Unilateral Lift",
     nutrition: "Moderate Carb",
     meals: [
@@ -192,7 +186,6 @@ const weekPlan: DayPlan[] = [
   },
   {
     day: "SATURDAY",
-    date: "2025-01-25",
     training: "Heavy Legs (Hypertrophy)",
     nutrition: "PM Heavy Hypertrophy Lift",
     meals: [
@@ -223,7 +216,6 @@ const weekPlan: DayPlan[] = [
   },
   {
     day: "SUNDAY",
-    date: "2025-01-26",
     training: "FULL REST 8-10k casual walk only",
     nutrition: "Detox / Digestion",
     meals: [
@@ -277,7 +269,6 @@ export function WorkoutDietTracker() {
           </Button>
           <div className="flex-1 text-center">
             <h2 className="text-2xl font-bold">{currentDay.day}</h2>
-            <p className="text-sm text-muted-foreground">{currentDay.date}</p>
           </div>
           <Button variant="ghost" size="icon" onClick={handleNextDay}>
             <ChevronRight className="w-5 h-5" />
