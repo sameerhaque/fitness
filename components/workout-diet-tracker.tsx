@@ -59,8 +59,8 @@ const weekPlan: DayPlan[] = [
       { time: "Pre-Cardio", activity: "pre-cardio", food: "Powder fat burner", macros: "0 cal" },
       { time: "Post-Cardio", activity: "Brain Fuel", food: "80g Oats + Egg or Beef Protein Powder + Berries", macros: "~400 cal" },
       { time: "Lunch", activity: "Performance", food: "200g Chicken + 180g Rice + Veg", macros: "~500 cal" },
-      { time: "Afternoon", activity: "Fuel", food: "Beef Protein Shake + 2 Rice Cakes + Berries", macros: "~200 cal" },
-      { time: "Dinner", activity: "Digestion", food: "200g White Fish + 250g Potatoes + Vegetables", macros: "~500 cal" },
+      { time: "Afternoon", activity: "Fuel", food: "Beef Protein Shake 25-30g", macros: "~200 cal" },
+      { time: "Dinner", activity: "Digestion", food: "180-220g White Fish + 120-150g Potatoes + Vegetables", macros: "~500 cal" },
       { time: "Night", activity: "Sleep Anchor", food: "Almond Butter + Magnesium", macros: "~150 cal" },
     ],
     workouts: [
